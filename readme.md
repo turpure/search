@@ -1,0 +1,1 @@
+Hello, this simple spider is basen on Scrapy which is an open project.If you want learn more about Scrapy,you can vist http://doc.scrapy.org/en/latest/intro/tutorial.html.This little crawler is designed to search the profitable item for ebay seller. 
