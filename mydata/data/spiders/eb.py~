@@ -18,13 +18,23 @@ class ebaydataSpider(CrawlSpider):
             yield scrapy.Request(url,callback=self.mp)     
     def mp(self,res):
        lis=res.xpath('//tr[contains(@bgcolor,"#f")]')
-       items=[]
+       i=0
+       #items=[]
+       #item=DataItem()
        for l in lis:                       
                item=DataItem()                               
                reg0='[0-9]{12}'
                pr0=re.compile(reg0)
                t0=re.findall(pr0,res.url)
 	       #print t0
-               item["itemnumber"]=t0;
-               itmes.append(item)
-       return items
+	       
+               #print i
+               item["itemnumber"]=t0
+               td=l.xpath('//td[@class="contentValueFont"]/text()').extract()
+               for s in td:
+                   print s
+                   i=i+1
+                   print i
+                   print "a beautiful day"
+               #itmes.append(item)
+               #yield item

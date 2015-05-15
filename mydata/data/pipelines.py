@@ -34,7 +34,7 @@ class MySQLStorePipeline(object):
     def _conditional_insert(self, tx, item):
        
         if item.get('tim'):
-           #for i in item['itemnumber']:
+           #for i in items:
               tx.execute('insert into saledetails (itemnumber,price,quantity,shoptime) values (%s,%s,%s,%s)',(item['itemnumber'][0],item['price'],item['quantity'],item['tim']))
                 #tx.execute('insert into product values (%s, %s)', (item['sales'][i],item['url'][i])
                 
